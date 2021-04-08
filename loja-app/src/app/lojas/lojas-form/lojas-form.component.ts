@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LojasService } from 'src/app/lojas.service';
 import { Loja } from '../loja';
+import { FormsModule }   from '@angular/forms';
 
 @Component({
   selector: 'app-lojas-form',

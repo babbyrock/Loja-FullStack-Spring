@@ -16,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/funcionarios")
 @RequiredArgsConstructor
+@CrossOrigin("http://localhost:4200")
 public class FuncionarioController {
 
     private final LojaRepository lojaRepository;
@@ -60,5 +61,24 @@ public class FuncionarioController {
                     return Void.TYPE;
                 })
                 .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Loja não encontrada") );
+
     }
+
+    /*@PutMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void atualizar (  @PathVariable Integer id, @RequestBody @Valid  Funcionario funcionarioatualizado, FuncionarioDTO dto)
+    {
+        Integer idLoja = dto.getIdLoja();
+
+        repository
+                .findById(id)
+                .map( funcionario -> {
+                    funcionarioatualizado.setId(funcionario.getId());
+                    return repository.save(funcionarioatualizado);
+                })
+
+                .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Loja não encontrada"));
+
+
+    }*/
 }

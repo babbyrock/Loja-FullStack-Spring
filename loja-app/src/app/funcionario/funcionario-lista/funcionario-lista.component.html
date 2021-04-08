@@ -1,0 +1,28 @@
+<h1 class="mt-4" >Funcionários</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Consulta</li>
+</ol>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Loja: </th>
+            <th>Nome: </th>
+            <th>CPF: </th>
+            <th>Email: </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let funcionario of funcionarios">
+            <td>{{ funcionario.idLoja }}</td>
+            <td>{{ funcionario.nome }}</td>
+            <td>{{ funcionario.cpf }}</td>
+            <td>{{ funcionario.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

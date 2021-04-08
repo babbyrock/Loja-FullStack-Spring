@@ -2,6 +2,7 @@ package loja.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.br.CNPJ;
@@ -39,7 +40,7 @@ public class Loja {
     @Column(nullable = false, length = 15)
     private String telefone;
 
-    @OneToMany( mappedBy = "loja" , fetch = FetchType.LAZY )
+    @OneToMany( mappedBy = "loja" , fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Set<Funcionario> funcionarios;

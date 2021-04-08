@@ -1,0 +1,58 @@
+<h1 class="mt-4">Funcionários</h1>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrum-bitem active">Novo</li>
+</ol>
+<div class="container">
+  <form #form="ngForm" (submit)="onSubmit()">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Loja: </label>
+          <select class="form-control"
+                  ngModel [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="funcionario.idLoja">
+            <option value = "">Selecione...</option>
+            <option *ngFor="let loja of lojas" [ngValue] = "loja.id">
+              {{ loja.nomeFantasia }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <label>Nome:</label>
+          <input class="form-control"
+                [(ngModel)]="funcionario.nome"
+                type="text" name="nome" id="inputNome">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label>CPF:</label>
+          <input class="form-control"
+                [(ngModel)]="funcionario.cpf"
+                type="text" name="cpf" id="inputCPF">
+      </div>
+
+
+      <div class="col-md-6 form-group">
+        <label>Email:</label>
+          <input class="form-control"
+                [(ngModel)]="funcionario.email"
+                type="text" name="email" id="inputEmail">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-success">
+          <i class= "fa fa-save"></i> Salvar</button></div>
+    </div>
+  </form>
+</div>
+

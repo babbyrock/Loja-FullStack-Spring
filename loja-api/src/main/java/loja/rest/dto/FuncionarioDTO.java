@@ -2,6 +2,7 @@ package loja.rest.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Data
 @NoArgsConstructor

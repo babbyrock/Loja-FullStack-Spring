@@ -9,6 +9,9 @@ import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component'
 import { LojasModule } from './lojas/lojas.module';
 import { LojasService } from './lojas.service';
+import { FuncionarioModule } from './funcionario/funcionario.module';
+import { FuncionarioService } from './funcionario.service';
+
 
 @NgModule({
   declarations: [
@@ -20,10 +23,12 @@ import { LojasService } from './lojas.service';
     HttpClientModule,
     AppRoutingModule,
     TemplateModule,
-    LojasModule
+    LojasModule,
+    FuncionarioModule
   ],
   providers: [
-    LojasService
+    LojasService,
+    FuncionarioService
   ],
   bootstrap: [AppComponent]
 })
